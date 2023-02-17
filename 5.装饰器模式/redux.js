@@ -5,7 +5,7 @@ import action from './action'
 
 class App extends Component{
     render() {
-
+        //App的业务逻辑
     }
 }
 function mapStateToProps(state) {
@@ -16,3 +16,6 @@ function mapDispatchToProps(dispatch){
     // 
     return bindActionCreators(action, dispatch)
 }
+
+// 把App组件与Redux绑定在一起
+export default connect(mapStateToProps, mapDispatchToProps)
