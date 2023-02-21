@@ -3,6 +3,11 @@
 // 前置：es6中的Proxy
 // const proxy = new Proxy(obj,{})
 
+// 1. 事件代理：事件冒泡
+// 2. 虚拟代理：通过Image加载图片
+// 3. 缓存代理：缓存计算结果
+// 4. 保护代理：getter，setter保护核心数据
+
 const present = {
     type: '巧克力',
     value: 60

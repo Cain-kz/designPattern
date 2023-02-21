@@ -22,5 +22,25 @@
         <a href="#">链接4号</a>
         <a href="#">链接5号</a>
     </div>
+    <script>
+        // 常规不使用事件代理，会有事情冒泡的情况，需要绑定多个点击事件
+        const aNode = document.getElementById('father').getElementsByTagName('a')
+        const aLength = aNode.length
+        for(let i = 0; i<aLength;i++) {
+            aNode[i].addEventListener('click', function(e){
+                e.preventDefault()
+                alert(`我是${aNodes[i].innerText}`)
+            })
+        }
+        // 采用代理模式(这里由父级一次绑定即可，从很大程度上提高我们代码的性能)
+        const father = document.getElementById('father')
+        father.addEventListener('click', function(e){
+            // 识别是否是目标子元素
+            if(e.target.tagName === 'A') {
+                e.preventDefault()
+                alert(`我是${aNodes[i].innerText}`)
+            }
+        })
+    </script>
 </body>
 </html>
