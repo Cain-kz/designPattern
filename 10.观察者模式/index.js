@@ -62,14 +62,19 @@ class PrdPublisher extends Publisher{
 class DeveloperObserver extends Observer{
     constructor(){
         super()
+        // 需求文档一开始还不存在，prd初始为空对象
         this.prdState = {}
     }
-    update(publisher){
+    update(publisher){ 
+        // 更新需求文档
         this.prdState = publisher.getState()
+        // 调用工作函数
         this.work()
     }
     work() {
+        // 获取需求文档
         const prd = this.prdState
+        // 开始基于文档提供的信息搬砖
     }
 }
 
